@@ -3,29 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <script src="app.js" defer></script>
     <link rel="stylesheet" href="game.css" />
+    <link rel="stylesheet" href="configuration.css" />
     <link rel="stylesheet" href="overlay.css" />
     <link rel="stylesheet" href="style.css" />
     <title>tic tac toe game</title>
   </head>
   <body>
-    <header>
+    <div id="backdrop"></div>
+    <header id="main-header">
       <h1>Play Tic Tac Toe</h1>
       <p>Built with HTML, CSS, JavaScript - Enjoy</p>
     </header>
     <main>
       <!-- overlay for editing username -->
-      <aside>
+      <aside class="model" id="config-overlay">
         <h2>choose your name</h2>
         <form>
-          <div>
+          <div class="form-control">
             <label for="playername">player name</label>
             <input type="text" name="name" id="playername" />
           </div>
           <div>
-            <button type="button">Cancel</button>
-            <button type="submit">confirm</button>
+            <button type="button" class="btn btn-alt">Cancel</button>
+            <button type="submit" class="btn">confirm</button>
           </div>
         </form>
       </aside>
@@ -40,7 +48,7 @@
               <h3>Player name</h3>
               <p>X</p>
               <!-- edit name of player  -->
-              <button>Edit</button>
+              <button class="btn btn-alt">Edit</button>
             </article>
           </li>
           <li>
@@ -49,12 +57,12 @@
               <h3>Player name</h3>
               <p>O</p>
               <!-- edit name of player  -->
-              <button>Edit</button>
+              <button class="btn btn-alt">Edit</button>
             </article>
           </li>
         </ol>
         <!-- start button -->
-        <button>Start new game</button>
+        <button class="btn">Start new game</button>
       </section>
       <!-- end -->
 
