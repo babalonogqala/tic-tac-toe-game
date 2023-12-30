@@ -9,5 +9,78 @@
     <link rel="stylesheet" href="style.css" />
     <title>tic tac toe game</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>Play Tic Tac Toe</h1>
+      <p>Built with HTML, CSS, JavaScript - Enjoy</p>
+    </header>
+    <main>
+      <!-- overlay for editing username -->
+      <aside>
+        <h2>choose your name</h2>
+        <form>
+          <div>
+            <label for="playername">player name</label>
+            <input type="text" name="name" id="playername" />
+          </div>
+          <div>
+            <button type="button">Cancel</button>
+            <button type="submit">confirm</button>
+          </div>
+        </form>
+      </aside>
+      <!-- end -->
+
+      <!-- player data -->
+      <section id="game-configuration">
+        <ol>
+          <li>
+            <article>
+              <h2>Player 1</h2>
+              <h3>Player name</h3>
+              <p>X</p>
+              <!-- edit name of player  -->
+              <button>Edit</button>
+            </article>
+          </li>
+          <li>
+            <article>
+              <h2>Player 2</h2>
+              <h3>Player name</h3>
+              <p>O</p>
+              <!-- edit name of player  -->
+              <button>Edit</button>
+            </article>
+          </li>
+        </ol>
+        <!-- start button -->
+        <button>Start new game</button>
+      </section>
+      <!-- end -->
+
+      <!-- the game -->
+      <section id="active-game">
+        <!-- general content -->
+        <article>
+          <h3>you won, <span id="winner-name">player name</span>!</h3>
+          <p>click "start new game" above, to start a new game</p>
+        </article>
+
+        <p>its your turn <span id="active-player-name">player name</span>!</p>
+        <ol>
+          <li></li>
+          <li></li>
+          <li></li>
+
+          <li></li>
+          <li></li>
+          <li></li>
+
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol>
+      </section>
+    </main>
+  </body>
 </html>
