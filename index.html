@@ -9,6 +9,8 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
       rel="stylesheet"
     />
+    <script src="game.js" defer></script>
+    <script src="config.js" defer></script>
     <script src="app.js" defer></script>
     <link rel="stylesheet" href="game.css" />
     <link rel="stylesheet" href="configuration.css" />
@@ -32,7 +34,9 @@
             <input type="text" name="name" id="playername" />
           </div>
           <div>
-            <button type="button" class="btn btn-alt">Cancel</button>
+            <button type="button" class="btn btn-alt" id="cancel-config">
+              Cancel
+            </button>
             <button type="submit" class="btn">confirm</button>
           </div>
         </form>
@@ -46,18 +50,18 @@
             <article>
               <h2>Player 1</h2>
               <h3>Player name</h3>
-              <p>X</p>
+              <p class="player-symbol">X</p>
               <!-- edit name of player  -->
-              <button class="btn btn-alt">Edit</button>
+              <button class="btn btn-alt" id="edit-player-1-btn">Edit</button>
             </article>
           </li>
           <li>
             <article>
               <h2>Player 2</h2>
               <h3>Player name</h3>
-              <p>O</p>
+              <p class="player-symbol">O</p>
               <!-- edit name of player  -->
-              <button class="btn btn-alt">Edit</button>
+              <button class="btn btn-alt" id="edit-player-2-btn">Edit</button>
             </article>
           </li>
         </ol>
@@ -66,17 +70,17 @@
       </section>
       <!-- end -->
 
-      <!-- the game -->
+      <!-- the game field -->
       <section id="active-game">
         <!-- general content -->
-        <article>
+        <article id="game-over">
           <h3>you won, <span id="winner-name">player name</span>!</h3>
           <p>click "start new game" above, to start a new game</p>
         </article>
 
         <p>its your turn <span id="active-player-name">player name</span>!</p>
-        <ol>
-          <li></li>
+        <ol id="game-board">
+          <li class="disabled"></li>
           <li></li>
           <li></li>
 
