@@ -2,95 +2,99 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Tic Tac Toe</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <script src="game.js" defer></script>
-    <script src="config.js" defer></script>
-    <script src="app.js" defer></script>
-    <link rel="stylesheet" href="game.css" />
-    <link rel="stylesheet" href="configuration.css" />
-    <link rel="stylesheet" href="overlay.css" />
-    <link rel="stylesheet" href="style.css" />
-    <title>tic tac toe game</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/overlay.css" />
+    <link rel="stylesheet" href="styles/configuration.css" />
+    <link rel="stylesheet" href="styles/game.css" />
+    <script src="js/config.js" defer></script>
+    <script src="js/game.js" defer></script>
+    <script src="js/app.js" defer></script>
   </head>
   <body>
     <div id="backdrop"></div>
     <header id="main-header">
-      <h1>Play Tic Tac Toe</h1>
-      <p>Built with HTML, CSS, JavaScript - Enjoy</p>
+      <h1>Play Tic, Tac, Toe</h1>
+      <p>Built with HTML, CSS, JavaScript and - of course - lots of love!</p>
     </header>
     <main>
-      <!-- overlay for editing username -->
-      <aside class="model" id="config-overlay">
-        <h2>choose your name</h2>
+      <aside class="modal" id="config-overlay">
+        <h2>Choose your name</h2>
+
         <form>
           <div class="form-control">
-            <label for="playername">player name</label>
-            <input type="text" name="name" id="playername" />
+            <label for="playername">Player name</label>
+            <input type="text" name="playername" id="playername" required />
           </div>
+          <p id="config-errors"></p>
           <div>
-            <button type="button" class="btn btn-alt" id="cancel-config">
+            <button type="reset" class="btn btn-alt" id="cancel-config-btn">
               Cancel
             </button>
-            <button type="submit" class="btn">confirm</button>
+            <button type="submit" class="btn">Confirm</button>
           </div>
         </form>
       </aside>
-      <!-- end -->
-
-      <!-- player data -->
       <section id="game-configuration">
         <ol>
           <li>
-            <article>
+            <article id="player-1-data">
               <h2>Player 1</h2>
-              <h3>Player name</h3>
+              <h3>PLAYER NAME</h3>
               <p class="player-symbol">X</p>
-              <!-- edit name of player  -->
-              <button class="btn btn-alt" id="edit-player-1-btn">Edit</button>
+              <button
+                class="btn btn-alt"
+                id="edit-player-1-btn"
+                data-playerid="1"
+              >
+                Edit
+              </button>
             </article>
           </li>
           <li>
-            <article>
+            <article id="player-2-data">
               <h2>Player 2</h2>
-              <h3>Player name</h3>
+              <h3>PLAYER NAME</h3>
               <p class="player-symbol">O</p>
-              <!-- edit name of player  -->
-              <button class="btn btn-alt" id="edit-player-2-btn">Edit</button>
+              <button
+                class="btn btn-alt"
+                id="edit-player-2-btn"
+                data-playerid="2"
+              >
+                Edit
+              </button>
             </article>
           </li>
         </ol>
-        <!-- start button -->
-        <button class="btn">Start new game</button>
+        <button class="btn" id="start-game-btn">Start New Game</button>
       </section>
-      <!-- end -->
 
-      <!-- the game field -->
       <section id="active-game">
-        <!-- general content -->
         <article id="game-over">
-          <h3>you won, <span id="winner-name">player name</span>!</h3>
-          <p>click "start new game" above, to start a new game</p>
+          <h2>You won, <span id="winner-name">PLAYER NAME</span>!</h2>
+          <p>Click "Start New Game" above, to start a new game!</p>
         </article>
 
-        <p>its your turn <span id="active-player-name">player name</span>!</p>
+        <p>It's your turn <span id="active-player-name">PLAYER NAME</span>!</p>
         <ol id="game-board">
-          <li class="disabled"></li>
-          <li></li>
-          <li></li>
+          <li data-col="1" data-row="1"></li>
+          <li data-col="2" data-row="1"></li>
+          <li data-col="3" data-row="1"></li>
 
-          <li></li>
-          <li></li>
-          <li></li>
+          <li data-col="1" data-row="2"></li>
+          <li data-col="2" data-row="2"></li>
+          <li data-col="3" data-row="2"></li>
 
-          <li></li>
-          <li></li>
-          <li></li>
+          <li data-col="1" data-row="3"></li>
+          <li data-col="2" data-row="3"></li>
+          <li data-col="3" data-row="3"></li>
         </ol>
       </section>
     </main>

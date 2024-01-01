@@ -1,6 +1,7 @@
 #config-overlay {
   margin: 0.5rem 0;
   text-align: center;
+  z-index: 1;
 }
 
 .form-control {
